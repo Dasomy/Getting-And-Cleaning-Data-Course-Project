@@ -30,7 +30,7 @@ subject <- rbind(subjectTest, subjectTrain)
 
 
 ## 2. 
-## Extracts only the measurements on the mean and standard deviation for each measurement. 
+## Extract only the measurements on the mean and standard deviation for each measurement. 
 
 ## 2.1 Load features
 features <- read.table("features.txt")
@@ -48,7 +48,7 @@ names(x) <- features[meanStd, 2]
 
 
 ## 3. 
-## Uses descriptive activity names to name the activities in the data set
+## Use descriptive activity names to name the activities in the data set
 
 ## 3.1 Load activity labels
 activityLabels <- read.table("activity_labels.txt")
@@ -62,7 +62,7 @@ names(y) <- "activity"
 ###############################################################################################
 
 ## 4. 
-## Appropriately labels the data set with descriptive variable names.
+## Appropriately label the data set with descriptive variable names.
 
 ## 4.1 Update name of 'subject'
 names(subject) <- "subject"
@@ -73,7 +73,7 @@ fullData <- cbind(x, y, subject)
 ###############################################################################################
 
 ## 5. 
-## From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+## From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## 5.1 Get average data
 avgData <- ddply(fullData, .(subject, activity), function(X) colMeans(X[, 1:66])) ## Using uppercase 'X' to distinguish from 'x'
