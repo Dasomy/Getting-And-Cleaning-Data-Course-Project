@@ -1,7 +1,7 @@
 # Codebook
 
 ## Overview
-The `run_analysis.R` script performs the following steps as defined by the project's requirements.
+The `run_analysis.R` script performs the following steps as defined by the project's requirements.  
 1. The script checks if `plyr` package is installed. If it isn't, it is first installed and then loaded. In the first step, all relevant data are merged together with `rbind()`.  
 2. From the merged data, only the columns with the mean and standard deviation information are extracted. These column names are updated with their corresponding names from `features.txt`.  
 3. Activity names are updated with their corresponding labels from `activity_labels.txt`.  
